@@ -60,9 +60,6 @@ const CompLogin = () => {
             <div className='row'>
                 <div className='col'>
                     <div id='singInDiv'></div>
-
-                    <p>AAA</p>
-                    <p>NUEVO</p>
                 </div>
             </div>
         </div>
