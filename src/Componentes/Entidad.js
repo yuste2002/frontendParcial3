@@ -6,7 +6,7 @@ const CompEntidad = () => {
     const [usuario, setUsuario] = useState('')
     const [ubicacion, setUbicacion] = useState('')
     const [idEntidad, setIdEntidad] = useState()
-    const [imageURL, setImageURL] = useState('')
+    var foto
 
 
     const crearEntidad = async (e) => {
@@ -42,7 +42,7 @@ const CompEntidad = () => {
             });
 
             const uploadResult = await uploadResponse.json();
-            setImageURL(uploadResult.imageURL);
+            foto = uploadResult.imageURL;
             console.log(uploadResult);
 
             // Elimina las comillas dobles del resultado antes de usarlo en la URL del tercer fetch
@@ -50,7 +50,7 @@ const CompEntidad = () => {
 
 
             var raw = JSON.stringify({
-                "foto": uploadResult.imageURL
+                "foto": foto
             })
 
             const entidadEditada = await fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${entityIdWithoutQuotes}`, {

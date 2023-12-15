@@ -6,7 +6,7 @@ const CompInicial = () => {
 
     const [entidad, setEntidad] = useState([]); 
     const [arrayFotos,setArrayFotos]= useState([]);
-    const [foto, setFoto] = useState();
+    var foto
 
     useEffect( () => {getUsuario()}, []);
 
@@ -77,7 +77,7 @@ const CompInicial = () => {
             body: raw
         }).then(response => response.text())
         .then(result => {
-            alert('Foto subida');
+            alert('Conjunto de fotos subidas');
             setArrayFotos([])
             window.location.reload()
         })
@@ -100,9 +100,13 @@ const CompInicial = () => {
                 body : formdata
             }).then(response => response.json())
                 .then(result =>{
-                    setFoto(result.imageUrl)
+                    foto = result.imageUrl
+                    console.log("Result: " + result.imageUrl)
                     console.log("Foto subida correctamente a cloudinary")
-                    actualizarFotoIndividual()
+                    // Llamar a actualizarFotoIndividual después de que setFoto se haya completado
+                    setTimeout(() => {
+                        actualizarFotoIndividual();
+                    }, 0);
                 })
                 .catch(error => {
                     console.error('Error al subir la imagen:', error);
@@ -114,7 +118,7 @@ const CompInicial = () => {
 
     const actualizarFotoIndividual = async() => {
         var raw = JSON.stringify({
-            "foto" : arrayFotos
+            "foto" : foto
             });
         fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
             method: 'PUT',
@@ -124,14 +128,18 @@ const CompInicial = () => {
             body: raw
         }).then(response => response.text())
         .then(result => {
-            alert('Foto subida');
-            setFoto()
+            console.log("Entidad: " + idEntidad)
+            console.log(result)
+            console.log("Foto: " + foto)
+            alert('Foto individual subida');
+            foto = ""
             window.location.reload()
         })
             .catch(error => {
                 console.error('Error al subir la imagen:', error);
             });
     }
+
 
     return(
         <div className="container">
