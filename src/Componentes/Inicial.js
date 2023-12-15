@@ -11,7 +11,8 @@ const CompInicial = () => {
     useEffect( () => {getUsuario()}, []);
 
     const getUsuario = async () => {
-        fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
+        //fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
+        fetch(`http://localhost:4000/entidades/${idEntidad}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +46,8 @@ const CompInicial = () => {
                 var formdata = new FormData();
                 formdata.append("foto", arch);
         
-                fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
+                //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
+                fetch('http://localhost:4000/entidades/subirFoto', {
                     method: 'POST',
                     body : formdata
                 }).then(response => response.json())
@@ -69,7 +71,8 @@ const CompInicial = () => {
         var raw = JSON.stringify({
             "imagenes" : arrayFotos
             });
-        fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
+        //fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
+        fetch(`http://localhost:4000/entidades/${idEntidad}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -95,7 +98,8 @@ const CompInicial = () => {
             var formdata = new FormData();
             formdata.append("foto", archivos2);
     
-            fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
+            //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
+            fetch('http://localhost:4000/entidades/subirFoto', {
                 method: 'POST',
                 body : formdata
             }).then(response => response.json())
@@ -120,7 +124,8 @@ const CompInicial = () => {
         var raw = JSON.stringify({
             "foto" : foto
             });
-        fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
+        //fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
+        fetch(`http://localhost:4000/entidades/${idEntidad}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

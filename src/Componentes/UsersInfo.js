@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const CompMyUserInfo = () => {
+const CompUsersInfo = () => {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
+        //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
+        fetch('http://localhost:4000/entidades/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,4 +39,4 @@ const CompMyUserInfo = () => {
 
 }
 
-export default CompMyUserInfo
+export default CompUsersInfo

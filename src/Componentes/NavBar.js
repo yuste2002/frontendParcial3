@@ -16,7 +16,8 @@ function NavbarPage(props) {
 }, []);
 
 const comprobarConexion = async () => {
-  fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/conexion/${JSON.parse(localStorage.getItem('objetoToken')).tokenId}/${JSON.parse(localStorage.getItem('objetoToken')).tokenCompleto}`, {
+  //fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/conexion/${JSON.parse(localStorage.getItem('objetoToken')).tokenId}/${JSON.parse(localStorage.getItem('objetoToken')).tokenCompleto}`, {
+    fetch(`http://localhost:4000/entidades/conexion/${JSON.parse(localStorage.getItem('objetoToken')).tokenId}/${JSON.parse(localStorage.getItem('objetoToken')).tokenCompleto}`, {  
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

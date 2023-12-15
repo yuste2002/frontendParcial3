@@ -1,5 +1,5 @@
 import NavbarPage from "../Componentes/NavBar.js"
-import CompMyUserInfo from "../Componentes/MyUserInfo.js"
+import CompUsersInfo from "../Componentes/UsersInfo.js"
 
 function PaginaMostrarEntidad() {
     return(
@@ -8,7 +8,7 @@ function PaginaMostrarEntidad() {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col">
-                        <CompMyUserInfo></CompMyUserInfo>
+                        <CompUsersInfo></CompUsersInfo>
                     </div>
                 </div>
             </div>

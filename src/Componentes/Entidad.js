@@ -21,7 +21,8 @@ const CompEntidad = () => {
         });
 
         try {
-            const response = await fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
+            //const response = await fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
+            const response = await fetch('http://localhost:4000/entidades/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,7 +37,8 @@ const CompEntidad = () => {
             var formdata = new FormData();
             formdata.append("foto", archivo);
 
-            const uploadResponse = await fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
+            //const uploadResponse = await fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
+                const uploadResponse = await fetch('http://localhost:4000/entidades/subirFoto', {
                 method: 'POST',
                 body: formdata
             });
@@ -53,7 +55,8 @@ const CompEntidad = () => {
                 "foto": foto
             })
 
-            const entidadEditada = await fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${entityIdWithoutQuotes}`, {
+            //const entidadEditada = await fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${entityIdWithoutQuotes}`, {
+            const entidadEditada = await fetch(`http://localhost:4000/entidades/${entityIdWithoutQuotes}`, {
                 method: 'PUT',
                 body: raw
             });

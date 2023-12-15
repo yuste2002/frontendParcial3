@@ -25,7 +25,8 @@ const CompPrincipal = (props) => {
             "linea": linea,
             "sentido": sentido,
         })
-        fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/linea/', {
+        //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/linea/', {
+        fetch('http://localhost:4000/paradas/linea/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +52,8 @@ const CompPrincipal = (props) => {
         var raw = JSON.stringify({
             "nombre": nombreParada
         })
-        fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/nombre/', {
+        //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/nombre/', {
+        fetch('http://localhost:4000/paradas/nombre/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +78,8 @@ const CompPrincipal = (props) => {
         var raw = JSON.stringify({
             "direccion": direccion
         })
-        fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/cercanas/', {
+        //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/cercanas/', {
+        fetch('http://localhost:4000/paradas/cercanas/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -102,7 +105,8 @@ const CompPrincipal = (props) => {
 
     const mostrarMapa = () => {
         if(!ubicacionCargada) {
-            fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/ubicacion/', {
+            //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/ubicacion/', {
+            fetch('http://localhost:4000/paradas/ubicacion/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
