@@ -24,8 +24,8 @@ const CompEntidad = () => {
         });
 
         try {
-            //const response = await fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
-            const response = await fetch('http://localhost:4000/eventos/', {
+            const response = await fetch('backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/', {
+            //const response = await fetch('http://localhost:4000/eventos/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

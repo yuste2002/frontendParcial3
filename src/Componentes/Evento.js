@@ -7,7 +7,8 @@ const CompEvento = () => {
     var foto
         
     useEffect(() => {
-        fetch(`http://localhost:4000/eventos/${idEvento}`, {
+        fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/${idEvento}`, {
+        //fetch(`http://localhost:4000/eventos/${idEvento}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,8 +33,8 @@ const CompEvento = () => {
             var formdata = new FormData();
             formdata.append("foto", archivos2);
     
-            //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/subirFoto', {
-            fetch('http://localhost:4000/eventos/subirFoto', {
+            fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/subirFoto', {
+            //fetch('http://localhost:4000/eventos/subirFoto', {
                 method: 'POST',
                 body : formdata
             }).then(response => response.json())
@@ -58,8 +59,9 @@ const CompEvento = () => {
         var raw = JSON.stringify({
             "imagen" : foto
             });
-        //fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/${idEntidad}`, {
-        fetch(`http://localhost:4000/eventos/${idEvento}`, {
+        fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/${idEvento}`, {
+        
+        //fetch(`http://localhost:4000/eventos/${idEvento}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

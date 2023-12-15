@@ -13,7 +13,8 @@ const CompEventosInfo = () => {
 
     useEffect(() => {
         //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
-        fetch('http://localhost:4000/eventos/', {
+        fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/', {
+        //fetch('http://localhost:4000/eventos/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -29,7 +30,8 @@ const CompEventosInfo = () => {
     }, [])
 
     const borrar = async (eventoId) => {
-        fetch(`http://localhost:4000/eventos/${eventoId}`, {
+        fetch(`https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/${eventoId}`, {
+        //fetch(`http://localhost:4000/eventos/${eventoId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

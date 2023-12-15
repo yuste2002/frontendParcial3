@@ -18,7 +18,8 @@ const CompMapa = () => {
             "lugar": position,
         })
         //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/linea/', {
-        fetch('http://localhost:4000/eventos/evento/cercano/', {
+        fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/evento/cercano/', {
+        //fetch('http://localhost:4000/eventos/evento/cercano/', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,7 +45,8 @@ const CompMapa = () => {
 
     const mostrarMapa = () => {
         //fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/paradas/ubicacion/', {
-            fetch('http://localhost:4000/eventos/ubicacion/getUbi/')
+            fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/eventos/ubicacion/getUbi/')
+            //fetch('http://localhost:4000/eventos/ubicacion/getUbi/')
             .then(response => response.json())
             .then(data => {
                 if (data.latitude && data.longitude) {
