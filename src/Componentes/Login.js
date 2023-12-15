@@ -39,7 +39,7 @@ const CompLogin = () => {
                 if (data){
                     data.tokenCompleto= response.credential
                     localStorage.setItem('objetoToken', JSON.stringify(data));
-                    window.location.href="/principal/"
+                    window.location.href="/"
                     //console.log(JSON.parse(localStorage.getItem('objetoToken')))
                 }
                         

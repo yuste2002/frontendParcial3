@@ -1,14 +1,15 @@
+import CompPrincipal from "../Componentes/Mapa.js"
 import NavbarPage from "../Componentes/NavBar.js"
-import CompUsersInfo from "../Componentes/UsersInfo.js"
 
-function PaginaMostrarEntidad() {
+function PaginaPrincipal () {
+
     return(
         <div>
             <NavbarPage></NavbarPage>
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col">
-                        <CompUsersInfo></CompUsersInfo>
+                        <CompPrincipal></CompPrincipal>
                     </div>
                 </div>
             </div>
@@ -16,4 +17,4 @@ function PaginaMostrarEntidad() {
     )
 }
 
-export default PaginaMostrarEntidad
+export default PaginaPrincipal

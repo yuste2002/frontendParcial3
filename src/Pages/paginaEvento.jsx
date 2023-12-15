@@ -1,14 +1,14 @@
-import CompMyInfo from "../Componentes/MyInfo.js";
+import CompEvento from "../Componentes/Evento.js";
 import NavbarPage from "../Componentes/NavBar.js";
 
-function PaginaMyInfo () {
+function PaginaEvento () {
     return(
         <div>
             <NavbarPage></NavbarPage>
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <CompMyInfo></CompMyInfo>
+                        <CompEvento></CompEvento>
                     </div>
                 </div>
             </div>
@@ -16,4 +16,4 @@ function PaginaMyInfo () {
     )
 }
 
-export default PaginaMyInfo
+export default PaginaEvento

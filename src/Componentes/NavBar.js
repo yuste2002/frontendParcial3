@@ -47,22 +47,32 @@ function cerrarSesion () {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className='navbar-collapse'>
         <Nav className="me-auto">
-          <Nav.Link href={`/inicial/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Foto
+          <Nav.Link href={`/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Inicio
           </Nav.Link>
-          <Nav.Link href={`/principal/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Mapa
-          </Nav.Link>
-          <Nav.Link href={`/entidades/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Entidad
-          </Nav.Link> 
-          <Nav.Link href={`/create/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Crear
-          </Nav.Link> 
+          {localStorage.getItem('objetoToken')!=undefined &&
+            <div>
+              <Nav.Link href={`/create/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Crear
+            </Nav.Link> 
+            </div>
+          }
+          {localStorage.getItem('objetoToken') == undefined &&
+            <div>
+              <Nav.Link href={`/login/`} className='navbar-link' style={{marginLeft: '10vmin'}}> Login
+              </Nav.Link>
+            </div>
+          }
         </Nav>
         <NavItem>{(nombreUsuario!='')? (nombreUsuario) : "Hola" }</NavItem>
         <Nav>
-            <NavDropdown drop='start' className='me-3' title={<img src={foto} style={{ width: '6vh', borderRadius: '50%' }} alt="" />} id="basic-nav-dropdown">
-            <NavDropdown.Item href={`/myUserInfo/`}>Ver mi perfil</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="/" onClick={cerrarSesion}>Cerrar sesión</NavDropdown.Item>
-          </NavDropdown>
+            {localStorage.getItem('objetoToken')!=undefined &&
+              <div>
+                <NavDropdown drop='start' className='me-3' title={<img src={foto} style={{ width: '6vh', borderRadius: '50%' }} alt="" />} id="basic-nav-dropdown">
+                  <NavDropdown.Item href={`/myUserInfo/`}>Ver mi perfil</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="/" onClick={cerrarSesion}>Cerrar sesión</NavDropdown.Item>
+                </NavDropdown>
+              </div>
+            }
         </Nav>
       </Navbar.Collapse>
     </Navbar>

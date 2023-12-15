@@ -3,23 +3,22 @@ import './App.css';
 
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
-import PaginaPrincipal from './Pages/paginaPrincipal.jsx';
 import PaginaCrear from './Pages/paginaCrear.jsx';
 import PaginaInicial from "./Pages/paginaInicial.jsx"
-import PaginaMostrarEntidad from "./Pages/paginaMostrarEntidad.jsx"
+import PaginaPrincipal from './Pages/paginaPrincipal.jsx';
 import CompLogin from './Componentes/Login.js';
-import PaginaMyInfo from './Pages/paginaMyInfo.jsx';
+import PaginaEvento from './Pages/paginaEvento.jsx';
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/principal/" element={<PaginaPrincipal/>}/>
-        <Route path="/" element={<CompLogin/>}/>
+        <Route path="/" element={<PaginaPrincipal/>}/>
         <Route path="/inicial/" element={<PaginaInicial/>}/>
-        <Route path="/entidades/" element={<PaginaMostrarEntidad/>}/>
         <Route path='/create/' element={<PaginaCrear/>}/>
-        <Route path='/myUserInfo/' element={<PaginaMyInfo/>}/>
+        <Route path='/eventoInfo/:idEvento' element={<PaginaEvento/>}/>
+        <Route path="login/" element={<CompLogin/>}/>
       </Routes>
     </BrowserRouter>
   );

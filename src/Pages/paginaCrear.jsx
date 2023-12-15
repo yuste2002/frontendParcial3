@@ -1,4 +1,4 @@
-import CompEntidad from '../Componentes/Entidad.js';
+import CompCrear from '../Componentes/Crear.js';
 import NavbarPage from '../Componentes/NavBar.js';
 
 function PaginaCrear () {
@@ -9,7 +9,7 @@ function PaginaCrear () {
             <div className='container'>
                 <div className='row'>
                     <div className='col'>
-                        <CompEntidad></CompEntidad>
+                        <CompCrear></CompCrear>
                     </div>
                 </div>
             </div>

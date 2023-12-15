@@ -3,26 +3,29 @@ import { setElement } from 'react-modal/lib/helpers/ariaAppHider';
 
 const CompEntidad = () => {
 
-    const [usuario, setUsuario] = useState('')
+    const [nombre, setNombre] = useState('')
     const [ubicacion, setUbicacion] = useState('')
-    const [idEntidad, setIdEntidad] = useState()
+    const [organizador, setOrganizador] = useState(JSON.parse(localStorage.getItem('objetoToken')).correo)
+    //const [imagen, setImagen] = useState()
+    //const [idEntidad, setIdEntidad] = useState()
     var foto
 
 
     const crearEntidad = async (e) => {
         e.preventDefault();
 
-        const input = document.getElementById('archivo');
-        const archivo = input.files[0];
+        //const input = document.getElementById('archivo');
+        //const archivo = input.files[0];
 
         var raw = JSON.stringify({
-            "usuario": usuario,
-            "ubicacion": ubicacion,
+            "nombre": nombre,
+            "lugar": ubicacion,
+            "organizador": organizador,
         });
 
         try {
             //const response = await fetch('https://backend-parcial3-alvaros-projects-aa3f751a.vercel.app/entidades/', {
-            const response = await fetch('http://localhost:4000/entidades/', {
+            const response = await fetch('http://localhost:4000/eventos/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,7 +35,8 @@ const CompEntidad = () => {
 
             const result = await response.text();
             console.log(result);
-            setIdEntidad(result);
+            window.location.href = `/`;
+            /*setIdEntidad(result);
             console.log("A")
             var formdata = new FormData();
             formdata.append("foto", archivo);
@@ -62,7 +66,7 @@ const CompEntidad = () => {
             });
 
             console.log("Entidad editada: " + entidadEditada)
-
+            */
         } catch (error) {
             console.error('Error:', error);
         }
@@ -73,17 +77,15 @@ const CompEntidad = () => {
         <div className="container">
             <div className="formularioCrear">
                 <form className="form" onSubmit={crearEntidad} >
-                    <a>Usuario:</a><br/>
-                    <input value={usuario} onChange={(e) => setUsuario(e.target.value)} 
+                    <a>Nombre del evento:</a><br/>
+                    <input value={nombre} onChange={(e) => setNombre(e.target.value)} 
                     type="text" id="usuario" className="form-control" required/>
                     <br/>
 
-                    <a>Ubicacion:</a><br/>
+                    <a>Lugar donde se organizara:</a><br/>
                     <textarea value={ubicacion} onChange={(e) => setUbicacion(e.target.value)} 
                     id="ubicacion" className="form-control" required></textarea>
                     <br/>
-
-                    <input type="file" className="form-control" id="archivo" aria-describedby="inputGroupFileAddon04" aria-label="Upload" accept=".png , .jpg"/>
 
                     <button className="btn btn-primary mt-4" type="submit">Crear Entidad</button>
                 </form>
