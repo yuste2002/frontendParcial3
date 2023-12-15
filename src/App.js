@@ -8,6 +8,7 @@ import PaginaCrear from './Pages/paginaCrear.jsx';
 import PaginaInicial from "./Pages/paginaInicial.jsx"
 import PaginaMostrarEntidad from "./Pages/paginaMostrarEntidad.jsx"
 import CompLogin from './Componentes/Login.js';
+import PaginaMyInfo from './Pages/paginaMyInfo.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/inicial/" element={<PaginaInicial/>}/>
         <Route path="/entidades/" element={<PaginaMostrarEntidad/>}/>
         <Route path='/create/' element={<PaginaCrear/>}/>
+        <Route path='/myUserInfo/' element={<PaginaMyInfo/>}/>
       </Routes>
     </BrowserRouter>
   );
